@@ -3,12 +3,12 @@ import { GraduationCap, Calendar, Award, Users, Trophy } from 'lucide-react';
 
 const Education = () => {
   const education = {
-    degree: 'Bachelor of Technology in Computer Science',
+    degree: 'Bachelor of Technology in Information Technology',
     university: 'SASTRA Deemed University',
     location: 'Tamil Nadu, India',
     duration: '2021 - 2025 (Expected)',
     cgpa: '8.3/10',
-    image: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: 'https://lh3.googleusercontent.com/p/AF1QipNt3cPrjZ6C85hdwerKeRlS5fDesoaRXRDP4Pgt=s1360-w1360-h1020-rw'
   };
 
   const activities = [

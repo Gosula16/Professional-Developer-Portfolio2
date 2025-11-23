@@ -10,10 +10,10 @@ const Gallery = () => {
 
   const photos = [
     {
-      src: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800',
+      src: 'https://lh3.googleusercontent.com/p/AF1QipNt3cPrjZ6C85hdwerKeRlS5fDesoaRXRDP4Pgt=s1360-w1360-h1020-rw',
       category: 'University',
       title: 'SASTRA University Campus',
-      description: 'Beautiful campus where I\'m pursuing my Computer Science degree'
+      description: 'Beautiful campus where I\'m pursuing my Information Technology degree'
     },
     {
       src: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800',

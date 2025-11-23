@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Download, User, Code, Heart, MapPin, Mail, Phone } from 'lucide-react';
 
 const Bio = () => {
@@ -118,7 +118,7 @@ const Bio = () => {
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3" />
                   <span className="font-medium text-gray-900 dark:text-white w-20">Phone:</span>
-                  <span className="text-gray-700 dark:text-gray-300">+91 </span>
+                  <span className="text-gray-700 dark:text-gray-300">+91 7337514702</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3" />

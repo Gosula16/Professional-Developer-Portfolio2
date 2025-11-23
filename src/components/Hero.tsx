@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Github, Linkedin, Twitter, Mail, MapPin, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
@@ -91,7 +91,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-blue-200 dark:bg-blue-800 rounded-full blur-3xl opacity-50 animate-pulse"></div>
               <img
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://cdn.pixabay.com/photo/2024/12/03/08/08/ai-generated-9241538_1280.jpg"
                 alt="Gosula Venkatesh"
                 className="relative w-80 h-80 rounded-full object-cover border-8 border-white dark:border-gray-800 shadow-2xl"
               />
