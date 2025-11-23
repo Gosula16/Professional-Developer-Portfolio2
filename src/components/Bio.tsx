@@ -3,7 +3,7 @@ import { Download, User, Code, Heart, MapPin, Mail, Phone } from 'lucide-react';
 
 const Bio = () => {
   const stats = [
-    { icon: Code, value: '3+', label: 'Years Experience' },
+    { icon: Code, value: '1+', label: 'Years Experience' },
     { icon: User, value: '15+', label: 'Projects Completed' },
     { icon: Heart, value: '∞', label: 'Passion for Innovation' },
   ];
@@ -50,10 +50,9 @@ const Bio = () => {
             </p>
             
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              Currently pursuing my B.Tech in Computer Science with a CGPA of 8.5/10, I've 
-              developed proficiency in Python, JavaScript, React, and various ML frameworks. 
-              I'm particularly fascinated by computer vision, natural language processing, 
-              and building scalable web applications.
+              B. Tech IT graduate and Software Developer Intern at Harman International, specializing in Bluetooth
+              connectivity with experience in profiles like A2DP, AVRCP, HFP, PBAP, and MAP. Proficient in Java,
+              React.js, Node.js, and full-stack development, with strong analytical and teamwork skills.
             </p>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
@@ -114,17 +113,17 @@ const Bio = () => {
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3" />
                   <span className="font-medium text-gray-900 dark:text-white w-20">Email:</span>
-                  <span className="text-gray-700 dark:text-gray-300">govindvinayak@email.com</span>
+                  <span className="text-gray-700 dark:text-gray-300">gosulavenkatesh461@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3" />
                   <span className="font-medium text-gray-900 dark:text-white w-20">Phone:</span>
-                  <span className="text-gray-700 dark:text-gray-300">+91 98765 43210</span>
+                  <span className="text-gray-700 dark:text-gray-300">+91 </span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3" />
                   <span className="font-medium text-gray-900 dark:text-white w-20">Location:</span>
-                  <span className="text-gray-700 dark:text-gray-300">Tamil Nadu, India</span>
+                  <span className="text-gray-700 dark:text-gray-300">Bengaluru, India</span>
                 </div>
               </div>
             </div>
@@ -134,11 +133,11 @@ const Bio = () => {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700 dark:text-gray-300">Completing B.Tech in Computer Science</span>
+                  <span className="text-gray-700 dark:text-gray-300">Completed B.Tech in Information Technology</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700 dark:text-gray-300">Building ML-powered applications</span>
+                  <span className="text-gray-700 dark:text-gray-300">Building & Developing applications</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
@@ -146,7 +145,7 @@ const Bio = () => {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700 dark:text-gray-300">Seeking internship opportunities</span>
+                  <span className="text-gray-700 dark:text-gray-300">Seeking Full Time opportunities</span>
                 </li>
               </ul>
             </div>

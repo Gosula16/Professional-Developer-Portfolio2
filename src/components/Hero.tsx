@@ -3,10 +3,10 @@ import { Github, Linkedin, Twitter, Mail, MapPin, ExternalLink } from 'lucide-re
 
 const Hero = () => {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/govindvinayak', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/govindvinayak', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/govindvinayak', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:govindvinayak@email.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/Gosula16', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/gosula-venkatesh-52b067233', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:gosulavenkatesh461@gmail.com', label: 'Email' },
   ];
 
   const scrollToContact = () => {
@@ -33,12 +33,10 @@ const Hero = () => {
               <span className="text-blue-600">Gosula Venkatesh</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              Data Scientist & Full Stack Developer
+              Software Developer & Full Stack Developer
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-400 mb-8 max-w-2xl">
-              Passionate about leveraging AI/ML and modern web technologies to solve real-world problems. 
-              Currently pursuing Computer Science at SASTRA University with expertise in Python, React, 
-              and machine learning frameworks.
+              I am Venkatesh Gosula, a B.Tech IT graduate and Software Developer Intern at Harman International with hands-on experience in Bluetooth connectivity across A2DP, AVRCP, HFP, PBAP, and MAP profiles. I also bring strong full-stack development skills in Java, React.js, Node.js, and API integration. With experience in both automotive systems and web development, I excel in problem-solving, log analysis, and building efficient, user-centric applications.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">

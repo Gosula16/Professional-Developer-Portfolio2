@@ -21,7 +21,7 @@ const Projects = () => {
       fullDescription: 'Developed a comprehensive plant disease detection system combining YOLOv8 for object detection and CNN for classification. The system can identify various plant diseases with 94% accuracy and provides treatment recommendations.',
       image: 'https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['Python', 'YOLOv8', 'TensorFlow', 'OpenCV', 'Flask', 'React'],
-      github: 'https://github.com/govindvinayak/plant-disease-detection',
+      github: 'https://github.com/Gosula16/plant-disease-detection',
       demo: 'https://plant-disease-demo.web.app',
       challenges: [
         'Handling diverse plant species and disease variations',
@@ -47,7 +47,7 @@ const Projects = () => {
       fullDescription: 'Built a comprehensive machine learning pipeline for breast cancer classification using multiple algorithms. Achieved 97% accuracy with ensemble methods and deployed as a web application for medical professionals.',
       image: 'https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Streamlit', 'Docker'],
-      github: 'https://github.com/govindvinayak/breast-cancer-ml',
+      github: 'https://github.com/Gosula16/breast-cancer-ml',
       demo: 'https://breast-cancer-ml.herokuapp.com',
       challenges: [
         'Handling imbalanced dataset',
@@ -73,7 +73,7 @@ const Projects = () => {
       fullDescription: 'Developed an end-to-end ALPR system using OpenCV and deep learning. The system can detect and recognize license plates from various angles and lighting conditions with high accuracy.',
       image: 'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['Python', 'OpenCV', 'TensorFlow', 'YOLO', 'Tesseract OCR', 'Flask'],
-      github: 'https://github.com/govindvinayak/alpr-system',
+      github: 'https://github.com/Gosula16/alpr-system',
       demo: 'https://alpr-demo.web.app',
       challenges: [
         'Handling various plate formats and fonts',
@@ -99,7 +99,7 @@ const Projects = () => {
       fullDescription: 'Built a comprehensive travel planning platform with AI-powered recommendations, itinerary planning, and social features. Users can discover destinations, plan trips, and share experiences.',
       image: 'https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT', 'Stripe API'],
-      github: 'https://github.com/govindvinayak/travely',
+      github: 'https://github.com/Gosula16/travely',
       demo: 'https://travely-app.web.app',
       challenges: [
         'Implementing real-time collaboration features',
@@ -125,7 +125,7 @@ const Projects = () => {
       fullDescription: 'Developed a full-featured e-commerce platform with product management, payment processing, order tracking, and admin dashboard. Includes advanced search, filtering, and recommendation features.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Stripe', 'Tailwind CSS'],
-      github: 'https://github.com/govindvinayak/ecommerce-platform',
+      github: 'https://github.com/Gosula16/ecommerce-platform',
       demo: 'https://ecommerce-gv.vercel.app',
       challenges: [
         'Implementing secure payment processing',
@@ -151,7 +151,7 @@ const Projects = () => {
       fullDescription: 'Built a feature-rich task management application using React Native with offline synchronization, push notifications, and collaborative features for team productivity.',
       image: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['React Native', 'Redux', 'SQLite', 'Firebase', 'Push Notifications'],
-      github: 'https://github.com/govindvinayak/task-manager-mobile',
+      github: 'https://github.com/Gosula16/task-manager-mobile',
       demo: 'https://play.google.com/store/apps/details?id=com.taskmanager',
       challenges: [
         'Implementing offline-first architecture',

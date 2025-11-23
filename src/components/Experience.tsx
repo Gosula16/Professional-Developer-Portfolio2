@@ -14,12 +14,12 @@ const Experience = () => {
         {
           name: 'Plant Disease Detection System',
           description: 'Developed a hybrid AI system combining object detection and classification for identifying plant diseases with treatment recommendations.',
-          link: 'https://github.com/govindvinayak/plant-disease-detection'
+          link: 'https://github.com/Gosula16/plant-disease-detection'
         },
         {
           name: 'Data Augmentation Pipeline',
           description: 'Created automated data augmentation pipeline that improved model performance by 15% across different plant species.',
-          link: 'https://github.com/govindvinayak/data-augmentation'
+          link: 'https://github.com/Gosula16/data-augmentation'
         }
       ]
     },
@@ -34,12 +34,12 @@ const Experience = () => {
         {
           name: 'E-commerce Dashboard',
           description: 'Built a comprehensive admin dashboard for e-commerce platform with real-time analytics and inventory management.',
-          link: 'https://github.com/govindvinayak/ecommerce-dashboard'
+          link: 'https://github.com/Gosula16/ecommerce-dashboard'
         },
         {
           name: 'Travel Booking Interface',
           description: 'Created responsive booking interface for travel application with advanced search and filtering capabilities.',
-          link: 'https://github.com/govindvinayak/travel-booking-ui'
+          link: 'https://github.com/Gosula16/travel-booking-ui'
         }
       ]
     },
@@ -54,12 +54,12 @@ const Experience = () => {
         {
           name: 'Customer Churn Prediction',
           description: 'Developed machine learning model to predict customer churn with 89% accuracy using ensemble methods.',
-          link: 'https://github.com/govindvinayak/customer-churn-prediction'
+          link: 'https://github.com/Gosula16/customer-churn-prediction'
         },
         {
           name: 'Sales Forecasting Dashboard',
           description: 'Created interactive dashboard for sales forecasting using time series analysis and visualization.',
-          link: 'https://github.com/govindvinayak/sales-forecasting'
+          link: 'https://github.com/Gosula16/sales-forecasting'
         }
       ]
     }

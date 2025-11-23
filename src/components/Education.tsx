@@ -7,7 +7,7 @@ const Education = () => {
     university: 'SASTRA Deemed University',
     location: 'Tamil Nadu, India',
     duration: '2021 - 2025 (Expected)',
-    cgpa: '8.5/10',
+    cgpa: '8.3/10',
     image: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800'
   };
 

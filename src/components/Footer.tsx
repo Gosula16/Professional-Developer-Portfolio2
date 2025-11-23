@@ -3,10 +3,10 @@ import { Github, Linkedin, Twitter, Mail, Heart, ExternalLink } from 'lucide-rea
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/govindvinayak', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/govindvinayak', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/govindvinayak', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:govindvinayak@email.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/Gosula16', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/gosula-venkatesh-52b067233', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:gosulavenaktesh461@gmail.com', label: 'Email' },
   ];
 
   const quickLinks = [
@@ -82,13 +82,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <p>govindvinayak@email.com</p>
-              <p>+91 98765 43210</p>
+              <p>gosulavenkatesh461@gmail.com.com</p>
+              <p>+91 7337514702</p>
               <p>Tamil Nadu, India</p>
               <p className="mt-4">
                 <span className="font-medium">SASTRA University</span><br />
-                Computer Science Student<br />
-                CGPA: 8.5/10
+                Information Technology Student<br />
+                CGPA: 8.3/10
               </p>
             </div>
           </div>

@@ -37,13 +37,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'govindvinayak@email.com',
-      href: 'mailto:govindvinayak@email.com'
+      value: 'gosulavenkatesh461@mail.com',
+      href: 'mailto:gosulavenkatesh461@mail.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+91 98765 43210',
+      value: '+91 7337514702',
       href: 'tel:+919876543210'
     },
     {
@@ -55,9 +55,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/govindvinayak', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/govindvinayak', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/govindvinayak', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/Gosula16', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/gosula-venkatesh-52b067233', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/', label: 'Twitter' },
   ];
 
   return (
