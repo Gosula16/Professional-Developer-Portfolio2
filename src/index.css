@@ -124,11 +124,11 @@ body::before {
   }
 
   .section-frame {
-    @apply py-16 md:py-24;
+    @apply py-14 md:py-20;
   }
 
   .section-heading {
-    @apply mb-12 text-center md:mb-16;
+    @apply mb-10 text-center md:mb-14;
   }
 
   .section-kicker {
@@ -140,12 +140,12 @@ body::before {
   }
 
   .section-title {
-    @apply text-4xl font-bold md:text-5xl;
+    @apply text-4xl font-bold md:text-[3.4rem];
     color: var(--text-primary);
   }
 
   .section-subtitle {
-    @apply mx-auto mt-4 max-w-3xl text-base leading-8 md:text-lg;
+    @apply mx-auto mt-4 max-w-2xl text-base leading-7 md:text-lg;
     color: var(--text-secondary);
   }
 
@@ -196,11 +196,11 @@ body::before {
   }
 
   .bento-grid {
-    @apply grid gap-6 lg:grid-cols-12;
+    @apply grid gap-5 lg:grid-cols-12;
   }
 
   .bento-card {
-    @apply glass-panel hover-lift p-6 md:p-8;
+    @apply glass-panel hover-lift p-5 md:p-7;
     animation: fadeInUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
@@ -253,7 +253,7 @@ body::before {
   .ambient-orb {
     @apply pointer-events-none absolute rounded-full blur-3xl;
     animation: floatOrb 18s ease-in-out infinite;
-    opacity: 0.5;
+    opacity: 0.28;
   }
 
   .text-gradient {
@@ -261,6 +261,10 @@ body::before {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .reveal-section {
+    animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 }
 

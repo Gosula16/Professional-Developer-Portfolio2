@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Code, Database, Brain, Globe, Server, Smartphone } from 'lucide-react';
 
 const Skills = () => {
@@ -19,30 +19,18 @@ const Skills = () => {
     { name: 'JavaScript', level: 90, category: 'languages' },
     { name: 'Java', level: 85, category: 'languages' },
     { name: 'TypeScript', level: 80, category: 'languages' },
-    { name: 'C++', level: 75, category: 'languages' },
     { name: 'React.js', level: 90, category: 'frontend' },
     { name: 'Next.js', level: 85, category: 'frontend' },
-    { name: 'HTML/CSS', level: 95, category: 'frontend' },
     { name: 'Tailwind CSS', level: 90, category: 'frontend' },
-    { name: 'Vue.js', level: 75, category: 'frontend' },
     { name: 'Node.js', level: 85, category: 'backend' },
     { name: 'Express.js', level: 80, category: 'backend' },
-    { name: 'Django', level: 75, category: 'backend' },
-    { name: 'Flask', level: 80, category: 'backend' },
     { name: 'FastAPI', level: 70, category: 'backend' },
     { name: 'TensorFlow', level: 85, category: 'datascience' },
-    { name: 'PyTorch', level: 80, category: 'datascience' },
     { name: 'Scikit-learn', level: 90, category: 'datascience' },
-    { name: 'Pandas', level: 95, category: 'datascience' },
-    { name: 'NumPy', level: 90, category: 'datascience' },
     { name: 'OpenCV', level: 85, category: 'datascience' },
-    { name: 'YOLOv8', level: 80, category: 'datascience' },
     { name: 'MongoDB', level: 85, category: 'database' },
     { name: 'PostgreSQL', level: 80, category: 'database' },
-    { name: 'MySQL', level: 85, category: 'database' },
-    { name: 'Firebase', level: 75, category: 'database' },
     { name: 'React Native', level: 75, category: 'mobile' },
-    { name: 'Flutter', level: 70, category: 'mobile' },
   ];
 
   const filteredSkills =
@@ -55,22 +43,22 @@ const Skills = () => {
       <div className="content-shell">
         <div className="section-heading">
           <span className="section-kicker">Capabilities</span>
-          <h2 className="section-title">A skill stack shaped for shipping, not just showcasing</h2>
+          <h2 className="section-title">Focused skills, presented with less noise</h2>
           <p className="section-subtitle">
-            From frontend polish to backend APIs and applied machine learning, I
-            work across the layers needed to build complete digital products.
+            I work across frontend, backend, and AI, but I care most about using
+            the right stack for a product that feels reliable and clear.
           </p>
         </div>
 
-        <div className="mb-10 flex flex-wrap justify-center gap-3">
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
           {skillCategories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               className={`rounded-full px-5 py-3 text-sm font-medium ${
                 selectedCategory === category.id
-                  ? 'bg-cyan-300 text-slate-950 shadow-[0_14px_30px_rgba(121,242,255,0.18)]'
-                  : 'border border-white/10 bg-white/5 text-slate-200 hover:bg-white/8'
+                  ? 'bg-sky-300 text-slate-950 shadow-[0_12px_28px_rgba(102,179,255,0.18)]'
+                  : 'border border-white/10 bg-white/5 text-slate-200 hover:bg-white/7'
               }`}
             >
               <span className="inline-flex items-center gap-2">
@@ -83,15 +71,15 @@ const Skills = () => {
 
         <div className="bento-grid">
           <div className="bento-card lg:col-span-8">
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-3 md:grid-cols-2">
               {filteredSkills.map((skill) => (
                 <div
                   key={`${skill.category}-${skill.name}`}
-                  className="rounded-[24px] border border-white/10 bg-white/5 p-5"
+                  className="rounded-[22px] border border-white/10 bg-white/4 p-4"
                 >
-                  <div className="mb-4 flex items-center justify-between">
+                  <div className="mb-3 flex items-center justify-between">
                     <h3 className="text-base font-semibold text-white">{skill.name}</h3>
-                    <span className="text-sm font-medium text-cyan-200">{skill.level}%</span>
+                    <span className="text-sm font-medium text-sky-200">{skill.level}%</span>
                   </div>
                   <div className="skill-meter">
                     <span style={{ width: `${skill.level}%` }}></span>
@@ -102,29 +90,29 @@ const Skills = () => {
           </div>
 
           <div className="bento-card lg:col-span-4">
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-200/70">
+            <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
               Focus Areas
             </p>
-            <div className="mt-6 space-y-4">
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+            <div className="mt-5 space-y-3">
+              <div className="rounded-[22px] border border-white/10 bg-white/4 p-4">
                 <h3 className="text-lg font-semibold text-white">AI + Data</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-300">
-                  Machine learning, model experimentation, computer vision, and
-                  turning analysis into product-facing features.
+                  Machine learning, computer vision, and turning analysis into
+                  practical product features.
                 </p>
               </div>
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div className="rounded-[22px] border border-white/10 bg-white/4 p-4">
                 <h3 className="text-lg font-semibold text-white">Frontend Craft</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-300">
-                  Responsive React interfaces, strong visual hierarchy, and
-                  deployment-ready product work.
+                  Responsive React interfaces with strong hierarchy and clear
+                  interaction design.
                 </p>
               </div>
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div className="rounded-[22px] border border-white/10 bg-white/4 p-4">
                 <h3 className="text-lg font-semibold text-white">Backend Systems</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-300">
                   APIs, service integration, deployment, debugging, and practical
-                  workflows for real applications.
+                  system workflows.
                 </p>
               </div>
             </div>

@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <section id="home" className="section-frame pt-32 md:pt-36">
       <div className="content-shell">
-        <div className="mb-8 flex items-center justify-center lg:justify-start">
+        <div className="mb-6 flex items-center justify-center lg:justify-start">
           <div className="info-pill">
             <Sparkles className="h-4 w-4 text-sky-300" />
             Bluetooth systems engineer, full-stack builder, and AI-focused developer
@@ -41,7 +41,7 @@ const Hero = () => {
 
         <div className="bento-grid">
           <div className="bento-card lg:col-span-7 lg:row-span-2">
-            <div className="flex h-full flex-col justify-between gap-10">
+            <div className="flex h-full flex-col justify-between gap-8">
               <div>
                 <span className="section-kicker">Design-forward engineering</span>
                 <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] text-white md:text-7xl">
@@ -49,7 +49,7 @@ const Hero = () => {
                   <span className="text-gradient"> systems that feel premium </span>
                   and still ship like real products.
                 </h1>
-                <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">
+                <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 md:text-lg">
                   I am Gosula Venkatesh, a B.Tech IT graduate and software developer
                   with hands-on experience in Bluetooth connectivity, React apps,
                   backend APIs, deployment workflows, and applied AI projects.
@@ -58,7 +58,7 @@ const Hero = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <button
                     onClick={() => scrollTo('contact')}
@@ -76,7 +76,7 @@ const Hero = () => {
                   </button>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5">
                   <div className="info-pill">
                     <MapPin className="h-4 w-4 text-cyan-300" />
                     Bengaluru, India
@@ -89,9 +89,9 @@ const Hero = () => {
           </div>
 
           <div className="bento-card lg:col-span-5">
-            <div className="flex h-full flex-col gap-5 md:flex-row md:items-center">
+            <div className="flex h-full flex-col gap-4 md:flex-row md:items-center">
               <div className="relative mx-auto w-full max-w-[260px] shrink-0">
-                <div className="absolute inset-0 rounded-[32px] bg-blue-400/12 blur-2xl"></div>
+                <div className="absolute inset-0 rounded-[32px] bg-blue-400/10 blur-2xl"></div>
                 <img
                   src="https://cdn.pixabay.com/photo/2024/12/03/08/08/ai-generated-9241538_1280.jpg"
                   alt="Gosula Venkatesh"
@@ -103,10 +103,10 @@ const Hero = () => {
                 <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
                   Profile Snapshot
                 </p>
-                <h2 className="mt-3 text-3xl font-bold text-white">
+                <h2 className="mt-3 text-[1.9rem] font-bold text-white">
                   Full stack + AI with embedded systems discipline
                 </h2>
-                <p className="mt-4 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-300">
                   From automotive Bluetooth debugging to deployable web products, I
                   enjoy the intersection of reliability, interface quality, and
                   engineering clarity.
@@ -128,13 +128,13 @@ const Hero = () => {
             <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
               Current Momentum
             </p>
-            <div className="mt-5 space-y-5">
+            <div className="mt-4 space-y-4">
               <div>
-                <p className="text-4xl font-bold text-white">15+</p>
+                <p className="text-3xl font-bold text-white">15+</p>
                 <p className="mt-1 text-sm text-slate-300">Public projects and assignments</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-white">3</p>
+                <p className="text-3xl font-bold text-white">3</p>
                 <p className="mt-1 text-sm text-slate-300">Core strengths: product, backend, AI</p>
               </div>
             </div>

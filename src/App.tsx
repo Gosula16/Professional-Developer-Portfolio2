@@ -13,6 +13,7 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
+import RevealSection from './components/RevealSection';
 
 function App() {
   return (
@@ -23,17 +24,39 @@ function App() {
         <div className="ambient-orb bottom-[-4rem] left-1/3 h-72 w-72 bg-amber-300/10"></div>
         <Header />
         <main>
-          <Hero />
-          <Bio />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Education />
-          <Certifications />
-          <Achievements />
-          <Testimonials />
-          <Gallery />
-          <Contact />
+          <RevealSection>
+            <Hero />
+          </RevealSection>
+          <RevealSection>
+            <Bio />
+          </RevealSection>
+          <RevealSection>
+            <Skills />
+          </RevealSection>
+          <RevealSection>
+            <Projects />
+          </RevealSection>
+          <RevealSection>
+            <Experience />
+          </RevealSection>
+          <RevealSection>
+            <Education />
+          </RevealSection>
+          <RevealSection>
+            <Certifications />
+          </RevealSection>
+          <RevealSection>
+            <Achievements />
+          </RevealSection>
+          <RevealSection>
+            <Testimonials />
+          </RevealSection>
+          <RevealSection>
+            <Gallery />
+          </RevealSection>
+          <RevealSection>
+            <Contact />
+          </RevealSection>
         </main>
         <Footer />
       </div>
