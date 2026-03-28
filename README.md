@@ -4,7 +4,7 @@ Personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 
 ## Live site
 
-- Hosted URL: [https://gosula16.github.io/Professional-Developer-Portfolio2/](https://gosula16.github.io/Professional-Developer-Portfolio2/)
+- Hosted URL: [https://professional-developer-portfolio2.vercel.app/](https://professional-developer-portfolio2.vercel.app/)
 
 ## Tech stack
 
@@ -28,7 +28,13 @@ npm run build
 
 ## Deployment
 
-This repo is configured to deploy automatically to GitHub Pages through GitHub Actions on every push to `main`.
+The current live production deployment is hosted on Vercel.
+
+Vercel production URL:
+
+- [https://professional-developer-portfolio2.vercel.app/](https://professional-developer-portfolio2.vercel.app/)
+
+This repo also includes a GitHub Pages workflow if you want an additional static deployment target.
 
 Workflow:
 
