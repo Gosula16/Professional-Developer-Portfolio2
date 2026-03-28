@@ -1,41 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Menu, X, Download, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/useTheme';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const { isDark, toggleTheme } = useTheme();
 
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'bio', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'contact', label: 'Contact' },
-  ];
+  const navItems = useMemo(
+    () => [
+      { id: 'home', label: 'Home' },
+      { id: 'bio', label: 'About' },
+      { id: 'skills', label: 'Skills' },
+      { id: 'projects', label: 'Projects' },
+      { id: 'experience', label: 'Experience' },
+      { id: 'education', label: 'Education' },
+      { id: 'certifications', label: 'Certifications' },
+      { id: 'contact', label: 'Contact' },
+    ],
+    [],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
+      const sections = navItems.map((item) => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 140;
 
       sections.forEach((section, index) => {
-        if (section) {
-          const { offsetTop, offsetHeight } = section;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(navItems[index].id);
-          }
+        if (!section) return;
+        const { offsetTop, offsetHeight } = section;
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          setActiveSection(navItems[index].id);
         }
       });
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -46,12 +49,11 @@ const Header = () => {
   };
 
   const downloadResume = (type: 'developer' | 'datascientist') => {
-    // In a real implementation, these would be actual file URLs
     const resumeUrls = {
       developer: '/resumes/developer-cv.pdf',
-      datascientist: '/resumes/data-scientist-cv.pdf'
+      datascientist: '/resumes/data-scientist-cv.pdf',
     };
-    
+
     const link = document.createElement('a');
     link.href = resumeUrls[type];
     link.download = `${type}-resume.pdf`;
@@ -59,23 +61,31 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Gosula Venkatesh</h1>
-          </div>
+    <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 sm:px-6">
+      <div className="content-shell">
+        <div className="glass-panel mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
+          <button
+            type="button"
+            onClick={() => scrollToSection('home')}
+            className="text-left"
+          >
+            <span className="block text-[0.65rem] uppercase tracking-[0.35em] text-cyan-200/80">
+              Portfolio
+            </span>
+            <span className="text-lg font-bold text-white sm:text-xl">
+              Gosula Venkatesh
+            </span>
+          </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden items-center gap-2 xl:flex">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`rounded-full px-4 py-2 text-sm font-medium ${
                   activeSection === item.id
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600'
+                    ? 'bg-white/12 text-white shadow-[0_0_0_1px_rgba(174,222,255,0.18)]'
+                    : 'text-slate-300 hover:bg-white/6 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -83,30 +93,30 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Theme Toggle & Resume Downloads */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden items-center gap-3 md:flex">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors duration-200"
+              className="ghost-button h-11 w-11 rounded-full px-0 py-0"
+              aria-label="Toggle theme"
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
-            
+
             <div className="relative group">
-              <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200">
-                <Download className="w-4 h-4 mr-2" />
+              <button className="premium-button px-5 py-3 text-xs sm:text-sm">
+                <Download className="mr-2 h-4 w-4" />
                 Resume
               </button>
-              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="invisible absolute right-0 top-full mt-3 w-52 rounded-2xl border border-white/10 bg-slate-950/90 p-2 opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:opacity-100">
                 <button
                   onClick={() => downloadResume('developer')}
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="block w-full rounded-xl px-4 py-3 text-left text-sm text-slate-200 hover:bg-white/8"
                 >
                   Developer Resume
                 </button>
                 <button
                   onClick={() => downloadResume('datascientist')}
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="block w-full rounded-xl px-4 py-3 text-left text-sm text-slate-200 hover:bg-white/8"
                 >
                   Data Scientist Resume
                 </button>
@@ -114,53 +124,53 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="flex items-center gap-2 xl:hidden">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors duration-200"
+              className="ghost-button h-10 w-10 rounded-full px-0 py-0"
+              aria-label="Toggle theme"
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors duration-200"
+              onClick={() => setIsMenuOpen((open) => !open)}
+              className="ghost-button h-10 w-10 rounded-full px-0 py-0"
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="glass-panel mt-3 p-4 xl:hidden">
+            <div className="grid gap-2">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                  className={`rounded-2xl px-4 py-3 text-left text-sm font-medium ${
                     activeSection === item.id
-                      ? 'text-blue-600 bg-blue-50 dark:bg-blue-900/20'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      ? 'bg-white/10 text-white'
+                      : 'text-slate-300 hover:bg-white/6 hover:text-white'
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="pt-4 space-y-2">
+              <div className="mt-2 grid gap-2">
                 <button
                   onClick={() => downloadResume('developer')}
-                  className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                  className="premium-button w-full"
                 >
-                  <Download className="w-4 h-4 mr-2" />
+                  <Download className="mr-2 h-4 w-4" />
                   Developer Resume
                 </button>
                 <button
                   onClick={() => downloadResume('datascientist')}
-                  className="w-full inline-flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                  className="ghost-button w-full"
                 >
-                  <Download className="w-4 h-4 mr-2" />
+                  <Download className="mr-2 h-4 w-4" />
                   Data Scientist Resume
                 </button>
               </div>

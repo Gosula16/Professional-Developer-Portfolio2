@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building, Calendar, ExternalLink, Code, Database, Globe } from 'lucide-react';
+import { Calendar, ExternalLink, Code, Database, Globe } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [

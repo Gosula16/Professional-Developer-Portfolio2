@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const Testimonials = () => {
@@ -10,46 +10,56 @@ const Testimonials = () => {
       name: 'Dr. Rajesh Kumar',
       role: 'Professor, Computer Science Department',
       company: 'SASTRA University',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200',
-      quote: 'Govind is an exceptional student with a remarkable ability to bridge theoretical concepts with practical applications. His work on machine learning projects demonstrates both technical excellence and innovative thinking.',
-      rating: 5
+      image:
+        'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200',
+      quote:
+        'Govind is an exceptional student with a remarkable ability to bridge theoretical concepts with practical applications. His work on machine learning projects demonstrates both technical excellence and innovative thinking.',
+      rating: 5,
     },
     {
       id: 2,
       name: 'Priya Sharma',
       role: 'Senior Software Engineer',
       company: 'Tech Solutions Inc.',
-      image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=200',
-      quote: 'Working with Govind on the plant disease detection project was incredible. His attention to detail and problem-solving skills are outstanding. He consistently delivers high-quality code and innovative solutions.',
-      rating: 5
+      image:
+        'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=200',
+      quote:
+        'Working with Govind on the plant disease detection project was incredible. His attention to detail and problem-solving skills are outstanding. He consistently delivers high-quality code and innovative solutions.',
+      rating: 5,
     },
     {
       id: 3,
       name: 'Amit Patel',
       role: 'Data Science Team Lead',
       company: 'AI Innovations Ltd.',
-      image: 'https://images.pexels.com/photos/2379006/pexels-photo-2379006.jpeg?auto=compress&cs=tinysrgb&w=200',
-      quote: 'Govind\'s expertise in both machine learning and web development makes him a valuable asset. His ability to translate complex ML models into user-friendly applications is impressive.',
-      rating: 5
+      image:
+        'https://images.pexels.com/photos/2379006/pexels-photo-2379006.jpeg?auto=compress&cs=tinysrgb&w=200',
+      quote:
+        "Govind's expertise in both machine learning and web development makes him a valuable asset. His ability to translate complex ML models into user-friendly applications is impressive.",
+      rating: 5,
     },
     {
       id: 4,
       name: 'Sarah Johnson',
       role: 'Project Manager',
       company: 'Digital Ventures',
-      image: 'https://images.pexels.com/photos/2379007/pexels-photo-2379007.jpeg?auto=compress&cs=tinysrgb&w=200',
-      quote: 'Govind is a reliable team player who consistently meets deadlines and exceeds expectations. His communication skills and technical expertise make him an ideal collaborator.',
-      rating: 5
+      image:
+        'https://images.pexels.com/photos/2379007/pexels-photo-2379007.jpeg?auto=compress&cs=tinysrgb&w=200',
+      quote:
+        'Govind is a reliable team player who consistently meets deadlines and exceeds expectations. His communication skills and technical expertise make him an ideal collaborator.',
+      rating: 5,
     },
     {
       id: 5,
       name: 'Michael Chen',
       role: 'Full Stack Developer',
       company: 'StartupHub',
-      image: 'https://images.pexels.com/photos/2379008/pexels-photo-2379008.jpeg?auto=compress&cs=tinysrgb&w=200',
-      quote: 'I had the pleasure of collaborating with Govind on several projects. His code quality is exceptional, and he has a great eye for user experience design. Highly recommended!',
-      rating: 5
-    }
+      image:
+        'https://images.pexels.com/photos/2379008/pexels-photo-2379008.jpeg?auto=compress&cs=tinysrgb&w=200',
+      quote:
+        'I had the pleasure of collaborating with Govind on several projects. His code quality is exceptional, and he has a great eye for user experience design. Highly recommended!',
+      rating: 5,
+    },
   ];
 
   const nextTestimonial = () => {
@@ -61,22 +71,21 @@ const Testimonials = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextTestimonial, 5000);
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
+  const renderStars = (rating: number) =>
+    Array.from({ length: 5 }, (_, index) => (
       <span
         key={index}
-        className={`text-lg ${
-          index < rating ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'
-        }`}
+        className={`text-lg ${index < rating ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`}
       >
         ★
       </span>
     ));
-  };
 
   return (
     <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -91,7 +100,6 @@ const Testimonials = () => {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Main Testimonial */}
           <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 md:p-12 text-center">
             <div className="mb-6">
               <Quote className="w-12 h-12 text-blue-600 mx-auto mb-4" />
@@ -102,7 +110,7 @@ const Testimonials = () => {
                 {renderStars(testimonials[currentTestimonial].rating)}
               </div>
             </div>
-            
+
             <div className="flex items-center justify-center">
               <img
                 src={testimonials[currentTestimonial].image}
@@ -123,14 +131,13 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
           >
             <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-400" />
           </button>
-          
+
           <button
             onClick={nextTestimonial}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
@@ -138,7 +145,6 @@ const Testimonials = () => {
             <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-400" />
           </button>
 
-          {/* Dots Indicator */}
           <div className="flex justify-center mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
@@ -154,7 +160,6 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* All Testimonials Grid (Hidden on mobile, shown on larger screens) */}
         <div className="hidden lg:grid grid-cols-3 gap-6 mt-16">
           {testimonials.slice(0, 3).map((testimonial, index) => (
             <div
@@ -182,9 +187,7 @@ const Testimonials = () => {
               <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-3">
                 "{testimonial.quote}"
               </p>
-              <div className="flex mt-3">
-                {renderStars(testimonial.rating)}
-              </div>
+              <div className="flex mt-3">{renderStars(testimonial.rating)}</div>
             </div>
           ))}
         </div>

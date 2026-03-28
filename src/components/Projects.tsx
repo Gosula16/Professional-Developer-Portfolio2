@@ -305,16 +305,12 @@ const Projects = () => {
   const selectedProjectData = projects.find((project) => project.id === selectedProject);
 
   return (
-    <section
-      id="projects"
-      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+    <section id="projects" className="section-frame">
+      <div className="content-shell">
+        <div className="section-heading">
+          <span className="section-kicker">Selected Work</span>
+          <h2 className="section-title">Real projects, real repositories, real shipped work</h2>
+          <p className="section-subtitle">
             Real projects pulled from my GitHub work across AI, full-stack apps,
             security, and systems-focused builds.
           </p>
@@ -325,10 +321,10 @@ const Projects = () => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`flex items-center px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+              className={`flex items-center rounded-full px-6 py-3 font-medium ${
                 selectedCategory === category.id
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                  ? 'bg-cyan-300 text-slate-950 shadow-[0_14px_30px_rgba(121,242,255,0.18)]'
+                  : 'border border-white/10 bg-white/5 text-slate-200 hover:bg-white/8'
               }`}
             >
               <category.icon className="w-4 h-4 mr-2" />
@@ -341,7 +337,7 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="glass-panel hover-lift overflow-hidden group"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -352,7 +348,7 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
                   <button
                     onClick={() => setSelectedProject(project.id)}
-                    className="opacity-0 group-hover:opacity-100 bg-white text-gray-900 px-4 py-2 rounded-lg font-medium transition-all duration-300"
+                      className="opacity-0 group-hover:opacity-100 bg-white text-gray-950 px-4 py-2 rounded-full font-medium transition-all duration-300"
                   >
                     View Details
                   </button>
@@ -360,10 +356,10 @@ const Projects = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-slate-300 mb-4 leading-7">
                   {project.shortDescription}
                 </p>
 
@@ -371,13 +367,13 @@ const Projects = () => {
                   {project.technologies.slice(0, 3).map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
+                      className="px-2 py-1 rounded-full border border-white/10 bg-white/8 text-cyan-100 text-xs"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full">
+                    <span className="px-2 py-1 rounded-full border border-white/10 bg-white/6 text-slate-300 text-xs">
                       +{project.technologies.length - 3} more
                     </span>
                   )}
@@ -388,7 +384,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-200"
+                    className="flex items-center text-slate-300 hover:text-white transition-colors duration-200"
                   >
                     <Github className="w-4 h-4 mr-1" />
                     Code
@@ -398,7 +394,7 @@ const Projects = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-200"
+                      className="flex items-center text-slate-300 hover:text-white transition-colors duration-200"
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />
                       Live Demo
@@ -412,7 +408,7 @@ const Projects = () => {
 
         {selectedProjectData && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white dark:bg-gray-900 rounded-xl max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div className="glass-panel max-w-4xl max-h-[90vh] overflow-y-auto">
               <div className="relative">
                 <img
                   src={selectedProjectData.image}
@@ -421,31 +417,31 @@ const Projects = () => {
                 />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  className="absolute top-4 right-4 bg-slate-950/80 p-2 rounded-full hover:bg-slate-900 transition-colors duration-200"
                 >
-                  <X className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                  <X className="w-5 h-5 text-slate-200" />
                 </button>
               </div>
 
               <div className="p-8">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                <h2 className="text-3xl font-bold text-white mb-4">
                   {selectedProjectData.title}
                 </h2>
 
-                <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">
+                <p className="text-slate-300 mb-6 text-lg leading-8">
                   {selectedProjectData.fullDescription}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-xl font-semibold text-white mb-4">
                       Challenges
                     </h3>
                     <ul className="space-y-2">
                       {selectedProjectData.challenges.map((challenge) => (
                         <li key={challenge} className="flex items-start">
                           <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          <span className="text-gray-600 dark:text-gray-400">
+                          <span className="text-slate-300">
                             {challenge}
                           </span>
                         </li>
@@ -454,14 +450,14 @@ const Projects = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-xl font-semibold text-white mb-4">
                       Solutions
                     </h3>
                     <ul className="space-y-2">
                       {selectedProjectData.solutions.map((solution) => (
                         <li key={solution} className="flex items-start">
                           <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          <span className="text-gray-600 dark:text-gray-400">
+                          <span className="text-slate-300">
                             {solution}
                           </span>
                         </li>
@@ -471,14 +467,14 @@ const Projects = () => {
                 </div>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-xl font-semibold text-white mb-4">
                     Technologies Used
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProjectData.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
+                        className="px-3 py-1 rounded-full border border-white/10 bg-white/8 text-cyan-100"
                       >
                         {tech}
                       </span>
@@ -487,14 +483,14 @@ const Projects = () => {
                 </div>
 
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-xl font-semibold text-white mb-4">
                     Key Learnings
                   </h3>
                   <ul className="space-y-2">
                     {selectedProjectData.keyLearnings.map((learning) => (
                       <li key={learning} className="flex items-start">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-gray-600 dark:text-gray-400">
+                        <span className="text-slate-300">
                           {learning}
                         </span>
                       </li>
@@ -507,7 +503,7 @@ const Projects = () => {
                     href={selectedProjectData.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors duration-200"
+                    className="ghost-button"
                   >
                     <Github className="w-5 h-5 mr-2" />
                     View Code
@@ -517,7 +513,7 @@ const Projects = () => {
                       href={selectedProjectData.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                      className="premium-button"
                     >
                       <ExternalLink className="w-5 h-5 mr-2" />
                       Live Demo

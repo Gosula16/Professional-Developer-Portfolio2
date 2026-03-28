@@ -17,7 +17,10 @@ import { ThemeProvider } from './context/ThemeContext';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="app-shell min-h-screen text-white">
+        <div className="ambient-orb left-[-8rem] top-24 h-72 w-72 bg-cyan-400/20"></div>
+        <div className="ambient-orb right-[-6rem] top-[32rem] h-80 w-80 bg-blue-500/20"></div>
+        <div className="ambient-orb bottom-[-4rem] left-1/3 h-72 w-72 bg-amber-300/10"></div>
         <Header />
         <main>
           <Hero />
