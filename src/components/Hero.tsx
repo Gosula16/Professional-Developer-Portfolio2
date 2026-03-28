@@ -34,7 +34,7 @@ const Hero = () => {
       <div className="content-shell">
         <div className="mb-8 flex items-center justify-center lg:justify-start">
           <div className="info-pill">
-            <Sparkles className="h-4 w-4 text-cyan-300" />
+            <Sparkles className="h-4 w-4 text-sky-300" />
             Bluetooth systems engineer, full-stack builder, and AI-focused developer
           </div>
         </div>
@@ -91,7 +91,7 @@ const Hero = () => {
           <div className="bento-card lg:col-span-5">
             <div className="flex h-full flex-col gap-5 md:flex-row md:items-center">
               <div className="relative mx-auto w-full max-w-[260px] shrink-0">
-                <div className="absolute inset-0 rounded-[32px] bg-cyan-300/20 blur-2xl"></div>
+                <div className="absolute inset-0 rounded-[32px] bg-blue-400/12 blur-2xl"></div>
                 <img
                   src="https://cdn.pixabay.com/photo/2024/12/03/08/08/ai-generated-9241538_1280.jpg"
                   alt="Gosula Venkatesh"
@@ -100,7 +100,7 @@ const Hero = () => {
               </div>
 
               <div className="flex-1">
-                <p className="text-xs uppercase tracking-[0.28em] text-cyan-200/70">
+                <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
                   Profile Snapshot
                 </p>
                 <h2 className="mt-3 text-3xl font-bold text-white">
@@ -115,7 +115,7 @@ const Hero = () => {
                   href="https://professional-developer-portfolio2.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center text-sm font-semibold text-cyan-200 hover:text-white"
+                  className="mt-5 inline-flex items-center text-sm font-semibold text-sky-200 hover:text-white"
                 >
                   Live portfolio
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -125,7 +125,7 @@ const Hero = () => {
           </div>
 
           <div className="bento-card lg:col-span-3">
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-200/70">
+            <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
               Current Momentum
             </p>
             <div className="mt-5 space-y-5">
@@ -141,7 +141,7 @@ const Hero = () => {
           </div>
 
           <div className="bento-card lg:col-span-2">
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-200/70">
+            <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
               Connect
             </p>
             <div className="mt-5 grid grid-cols-2 gap-3">

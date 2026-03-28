@@ -69,7 +69,7 @@ const Header = () => {
             onClick={() => scrollToSection('home')}
             className="text-left"
           >
-            <span className="block text-[0.65rem] uppercase tracking-[0.35em] text-cyan-200/80">
+            <span className="block text-[0.65rem] uppercase tracking-[0.35em] text-slate-400">
               Portfolio
             </span>
             <span className="text-lg font-bold text-white sm:text-xl">
@@ -84,7 +84,7 @@ const Header = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`rounded-full px-4 py-2 text-sm font-medium ${
                   activeSection === item.id
-                    ? 'bg-white/12 text-white shadow-[0_0_0_1px_rgba(174,222,255,0.18)]'
+                    ? 'bg-white/10 text-white shadow-[0_0_0_1px_rgba(255,255,255,0.10)]'
                     : 'text-slate-300 hover:bg-white/6 hover:text-white'
                 }`}
               >
