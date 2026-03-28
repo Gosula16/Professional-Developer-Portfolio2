@@ -1,4 +1,3 @@
-import React from 'react';
 import { GraduationCap, Calendar, Award, Users, Trophy } from 'lucide-react';
 
 const Education = () => {
@@ -6,30 +5,34 @@ const Education = () => {
     degree: 'Bachelor of Technology in Information Technology',
     university: 'SASTRA Deemed University',
     location: 'Tamil Nadu, India',
-    duration: '2021 - 2025 (Expected)',
+    duration: '2021 - 2025',
     cgpa: '8.3/10',
-    image: 'https://lh3.googleusercontent.com/p/AF1QipNt3cPrjZ6C85hdwerKeRlS5fDesoaRXRDP4Pgt=s1360-w1360-h1020-rw'
+    image:
+      'https://lh3.googleusercontent.com/p/AF1QipNt3cPrjZ6C85hdwerKeRlS5fDesoaRXRDP4Pgt=s1360-w1360-h1020-rw',
   };
 
   const activities = [
     {
       icon: Users,
       title: 'NSS Volunteer',
-      description: 'Active participant in National Service Scheme, contributing to community service and social development initiatives.',
-      period: '2022 - Present'
+      description:
+        'Active participant in National Service Scheme, contributing to community initiatives and service-driven programs.',
+      period: '2022 - Present',
     },
     {
       icon: Trophy,
       title: 'Gaming Club Member',
-      description: 'Member of the university gaming club, organizing esports tournaments and gaming events.',
-      period: '2021 - Present'
+      description:
+        'Supported university gaming events and tournament activity while building team coordination skills.',
+      period: '2021 - Present',
     },
     {
       icon: Award,
       title: 'Mathematics Club',
-      description: 'Active member of the mathematics club, participating in problem-solving competitions and mathematical discussions.',
-      period: '2021 - 2023'
-    }
+      description:
+        'Participated in problem-solving sessions and analytical discussions that strengthened core thinking.',
+      period: '2021 - 2023',
+    },
   ];
 
   const coursework = [
@@ -41,132 +44,83 @@ const Education = () => {
     'Artificial Intelligence',
     'Web Technologies',
     'Operating Systems',
-    'Computer Graphics',
-    'Distributed Systems'
   ];
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Education
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            My academic journey and university experiences
+    <section id="education" className="section-frame">
+      <div className="content-shell">
+        <div className="section-heading">
+          <span className="section-kicker">Education</span>
+          <h2 className="section-title">Academic foundations with room for real product work</h2>
+          <p className="section-subtitle">
+            My degree work gave me a strong systems and software base while I built
+            practical projects outside the classroom.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Education Details */}
-          <div>
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
-              <div className="flex items-center mb-6">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
-                  <GraduationCap className="w-8 h-8 text-blue-600" />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {education.degree}
-                  </h3>
-                  <p className="text-lg text-blue-600 font-semibold">
-                    {education.university}
-                  </p>
-                </div>
+        <div className="bento-grid">
+          <div className="bento-card lg:col-span-7 lg:row-span-2">
+            <div className="flex items-start gap-4">
+              <div className="rounded-2xl bg-white/10 p-4">
+                <GraduationCap className="h-8 w-8 text-cyan-200" />
               </div>
-              
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center">
-                  <Calendar className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">{education.duration}</span>
-                </div>
-                <div className="flex items-center">
-                  <Award className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">CGPA: {education.cgpa}</span>
-                </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white">{education.degree}</h3>
+                <p className="mt-2 text-lg font-medium text-cyan-200">
+                  {education.university}
+                </p>
               </div>
+            </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                  Relevant Coursework
-                </h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {coursework.map((course, index) => (
-                    <div
-                      key={index}
-                      className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 px-2 py-1 rounded"
-                    >
-                      {course}
-                    </div>
-                  ))}
-                </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <div className="info-pill">
+                <Calendar className="h-4 w-4 text-cyan-300" />
+                {education.duration}
+              </div>
+              <div className="info-pill">
+                <Award className="h-4 w-4 text-cyan-300" />
+                CGPA {education.cgpa}
+              </div>
+              <div className="info-pill">{education.location}</div>
+            </div>
+
+            <div className="mt-8 rounded-[24px] border border-white/10 bg-white/5 p-6">
+              <h4 className="text-lg font-semibold text-white">Relevant Coursework</h4>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {coursework.map((course) => (
+                  <div
+                    key={course}
+                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+                  >
+                    {course}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* University Image */}
-          <div className="flex justify-center">
+          <div className="bento-card lg:col-span-5">
             <img
               src={education.image}
               alt="SASTRA University"
-              className="w-full max-w-md rounded-2xl shadow-2xl"
+              className="h-full min-h-[320px] w-full rounded-[24px] object-cover"
             />
           </div>
-        </div>
 
-        {/* Activities and Involvement */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            Activities & Involvement
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {activities.map((activity, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
-                    <activity.icon className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      {activity.title}
-                    </h4>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {activity.period}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {activity.description}
-                </p>
+          {activities.map((activity) => (
+            <div key={activity.title} className="bento-card lg:col-span-4">
+              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
+                <activity.icon className="h-6 w-6 text-cyan-200" />
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Academic Achievements */}
-        <div className="mt-16 bg-gradient-to-r from-green-50 to-teal-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-8">
-            Academic Highlights
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-green-600 mb-2">8.5/10</div>
-              <p className="text-gray-600 dark:text-gray-400">Current CGPA</p>
+              <p className="text-sm uppercase tracking-[0.25em] text-cyan-200/70">
+                {activity.period}
+              </p>
+              <h3 className="mt-3 text-xl font-semibold text-white">{activity.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-300">
+                {activity.description}
+              </p>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-              <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-600 mb-2">5+</div>
-              <p className="text-gray-600 dark:text-gray-400">Certifications Earned</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

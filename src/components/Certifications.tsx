@@ -3,6 +3,7 @@ import { Award, ExternalLink, Calendar, Building, X } from 'lucide-react';
 
 const Certifications = () => {
   const [selectedCert, setSelectedCert] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const certifications = [
     {
@@ -11,11 +12,13 @@ const Certifications = () => {
       issuer: 'JP Morgan Chase & Co.',
       date: 'March 2023',
       credentialId: 'JPMC-SWE-2023-001',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Completed virtual software engineering program focusing on financial technology, trading systems, and software development best practices.',
+      image:
+        'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description:
+        'Completed a virtual software engineering program focused on financial technology, trading systems, and development practices.',
       skills: ['Python', 'React', 'Financial Systems', 'Git', 'Unit Testing'],
       verifyUrl: 'https://forage.com/certificate/verify',
-      category: 'Software Engineering'
+      category: 'Software Engineering',
     },
     {
       id: 2,
@@ -23,11 +26,13 @@ const Certifications = () => {
       issuer: 'IBM',
       date: 'January 2023',
       credentialId: 'IBM-AI-DS-2023-456',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Comprehensive program covering machine learning, deep learning, data analysis, and AI applications in real-world scenarios.',
-      skills: ['Python', 'Machine Learning', 'Deep Learning', 'Data Analysis', 'TensorFlow', 'Pandas'],
+      image:
+        'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description:
+        'Covered machine learning, deep learning, data analysis, and practical AI workflows.',
+      skills: ['Python', 'Machine Learning', 'Deep Learning', 'TensorFlow', 'Pandas'],
       verifyUrl: 'https://coursera.org/verify',
-      category: 'Data Science'
+      category: 'Data Science',
     },
     {
       id: 3,
@@ -35,11 +40,13 @@ const Certifications = () => {
       issuer: 'freeCodeCamp',
       date: 'November 2022',
       credentialId: 'FCC-FE-2022-789',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Completed comprehensive front-end development curriculum including responsive web design, JavaScript algorithms, and front-end libraries.',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Responsive Design', 'APIs'],
+      image:
+        'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description:
+        'Built a broad frontend base across responsive design, JavaScript, and component-driven web development.',
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Responsive Design'],
       verifyUrl: 'https://freecodecamp.org/certification',
-      category: 'Web Development'
+      category: 'Web Development',
     },
     {
       id: 4,
@@ -47,65 +54,46 @@ const Certifications = () => {
       issuer: 'The Odin Project',
       date: 'September 2022',
       credentialId: 'TOP-FS-2022-321',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Intensive full-stack development program covering both front-end and back-end technologies with hands-on projects.',
-      skills: ['JavaScript', 'Node.js', 'Express', 'MongoDB', 'React', 'Git'],
+      image:
+        'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description:
+        'Strengthened both frontend and backend fundamentals with project-based full-stack work.',
+      skills: ['JavaScript', 'Node.js', 'Express', 'MongoDB', 'React'],
       verifyUrl: 'https://theodinproject.com/certificate',
-      category: 'Web Development'
+      category: 'Web Development',
     },
-    {
-      id: 5,
-      title: 'AWS Cloud Practitioner',
-      issuer: 'Amazon Web Services',
-      date: 'June 2023',
-      credentialId: 'AWS-CP-2023-654',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Foundational certification demonstrating understanding of AWS cloud services, architecture, and best practices.',
-      skills: ['AWS Services', 'Cloud Computing', 'Security', 'Pricing', 'Support'],
-      verifyUrl: 'https://aws.amazon.com/verification',
-      category: 'Cloud Computing'
-    }
   ];
 
-  const categories = ['All', 'Software Engineering', 'Data Science', 'Web Development', 'Cloud Computing'];
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const categories = ['All', 'Software Engineering', 'Data Science', 'Web Development'];
 
-  const filteredCertifications = selectedCategory === 'All' 
-    ? certifications 
-    : certifications.filter(cert => cert.category === selectedCategory);
+  const filteredCertifications =
+    selectedCategory === 'All'
+      ? certifications
+      : certifications.filter((cert) => cert.category === selectedCategory);
 
-  const openCertModal = (certId: number) => {
-    setSelectedCert(certId);
-  };
-
-  const closeCertModal = () => {
-    setSelectedCert(null);
-  };
-
-  const selectedCertData = certifications.find(cert => cert.id === selectedCert);
+  const selectedCertData = certifications.find((cert) => cert.id === selectedCert);
 
   return (
-    <section id="certifications" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Certifications
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Professional certifications and achievements that validate my expertise
+    <section id="certifications" className="section-frame">
+      <div className="content-shell">
+        <div className="section-heading">
+          <span className="section-kicker">Certifications</span>
+          <h2 className="section-title">Credentials that support the project work</h2>
+          <p className="section-subtitle">
+            A concise record of programs and certificates that complement my
+            hands-on development and AI work.
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="mb-12 flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+              className={`rounded-full px-5 py-3 text-sm font-medium ${
                 selectedCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                  ? 'bg-cyan-300 text-slate-950 shadow-[0_14px_30px_rgba(121,242,255,0.18)]'
+                  : 'border border-white/10 bg-white/5 text-slate-200 hover:bg-white/8'
               }`}
             >
               {category}
@@ -113,140 +101,96 @@ const Certifications = () => {
           ))}
         </div>
 
-        {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {filteredCertifications.map((cert) => (
-            <div
+            <button
               key={cert.id}
-              className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-              onClick={() => openCertModal(cert.id)}
+              onClick={() => setSelectedCert(cert.id)}
+              className="glass-panel hover-lift overflow-hidden text-left"
             >
-              <div className="relative">
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 right-4 bg-white dark:bg-gray-800 p-2 rounded-full">
-                  <Award className="w-5 h-5 text-yellow-500" />
-                </div>
-              </div>
-              
+              <img src={cert.image} alt={cert.title} className="h-44 w-full object-cover" />
               <div className="p-6">
-                <div className="flex items-center mb-2">
-                  <Building className="w-4 h-4 text-gray-500 dark:text-gray-400 mr-2" />
-                  <span className="text-sm text-gray-500 dark:text-gray-400">{cert.issuer}</span>
+                <div className="mb-3 flex items-center gap-2 text-sm text-slate-300">
+                  <Building className="h-4 w-4 text-cyan-200" />
+                  {cert.issuer}
                 </div>
-                
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  {cert.title}
-                </h3>
-                
-                <div className="flex items-center mb-4">
-                  <Calendar className="w-4 h-4 text-gray-500 dark:text-gray-400 mr-2" />
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{cert.date}</span>
+                <h3 className="text-lg font-bold text-white">{cert.title}</h3>
+                <div className="mt-3 flex items-center gap-2 text-sm text-slate-400">
+                  <Calendar className="h-4 w-4" />
+                  {cert.date}
                 </div>
-                
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {cert.skills.slice(0, 3).map((skill, index) => (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {cert.skills.slice(0, 2).map((skill) => (
                     <span
-                      key={index}
-                      className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
+                      key={skill}
+                      className="rounded-full border border-white/10 bg-white/6 px-2 py-1 text-xs text-cyan-100"
                     >
                       {skill}
                     </span>
                   ))}
-                  {cert.skills.length > 3 && (
-                    <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs rounded-full">
-                      +{cert.skills.length - 3}
-                    </span>
-                  )}
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full">
-                    {cert.category}
-                  </span>
-                  <button className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
-        {/* Certification Modal */}
-        {selectedCert && selectedCertData && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white dark:bg-gray-900 rounded-xl max-w-2xl max-h-[90vh] overflow-y-auto">
+        {selectedCertData && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+            <div className="glass-panel max-h-[90vh] max-w-2xl overflow-y-auto">
               <div className="relative">
                 <img
                   src={selectedCertData.image}
                   alt={selectedCertData.title}
-                  className="w-full h-64 object-cover"
+                  className="h-56 w-full object-cover"
                 />
                 <button
-                  onClick={closeCertModal}
-                  className="absolute top-4 right-4 bg-white dark:bg-gray-800 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  onClick={() => setSelectedCert(null)}
+                  className="absolute right-4 top-4 rounded-full bg-slate-950/80 p-2"
                 >
-                  <X className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                  <X className="h-5 w-5 text-slate-200" />
                 </button>
-                <div className="absolute top-4 left-4 bg-white dark:bg-gray-800 p-2 rounded-full">
-                  <Award className="w-6 h-6 text-yellow-500" />
+                <div className="absolute left-4 top-4 rounded-full bg-slate-950/80 p-2">
+                  <Award className="h-5 w-5 text-amber-300" />
                 </div>
               </div>
-              
+
               <div className="p-8">
-                <div className="flex items-center mb-4">
-                  <Building className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-2" />
-                  <span className="text-gray-600 dark:text-gray-400">{selectedCertData.issuer}</span>
+                <div className="flex items-center gap-2 text-sm text-slate-300">
+                  <Building className="h-4 w-4 text-cyan-200" />
+                  {selectedCertData.issuer}
                 </div>
-                
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                <h3 className="mt-4 text-2xl font-bold text-white">
                   {selectedCertData.title}
-                </h2>
-                
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center">
-                    <Calendar className="w-4 h-4 text-gray-500 dark:text-gray-400 mr-2" />
-                    <span className="text-gray-600 dark:text-gray-400">{selectedCertData.date}</span>
+                </h3>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div className="info-pill justify-start">
+                    <Calendar className="h-4 w-4 text-cyan-300" />
+                    {selectedCertData.date}
                   </div>
-                  <div>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">Credential ID:</span>
-                    <p className="font-mono text-sm text-gray-700 dark:text-gray-300">
-                      {selectedCertData.credentialId}
-                    </p>
+                  <div className="info-pill justify-start">
+                    Credential: {selectedCertData.credentialId}
                   </div>
                 </div>
-                
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                <p className="mt-6 text-base leading-8 text-slate-300">
                   {selectedCertData.description}
                 </p>
-                
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Skills Covered
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedCertData.skills.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {selectedCertData.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/10 bg-white/8 px-3 py-1 text-sm text-cyan-100"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-                
                 <a
                   href={selectedCertData.verifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                  className="premium-button mt-8"
                 >
-                  <ExternalLink className="w-5 h-5 mr-2" />
+                  <ExternalLink className="mr-2 h-4 w-4" />
                   Verify Certificate
                 </a>
               </div>
